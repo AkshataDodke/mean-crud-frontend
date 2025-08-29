@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Navbar card */
+nav.card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1.5rem;
+}
+
+/* Links */
+nav.card a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #444;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav.card a:hover {
+    background: #f0f4ff;
+    color: #007bff;
+}
+
+/* Active route highlight */
+nav.card a.active {
+    background: #007bff;
+    color: #fff;
+}

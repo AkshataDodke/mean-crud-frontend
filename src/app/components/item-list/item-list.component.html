@@ -1,0 +1,27 @@
+<div class="card">
+  <h2>Items</h2>
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <table *ngIf="!loading && items.length">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Created</th>
+        <th class="actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let it of items">
+        <td>{{ it.name }}</td>
+        <td>{{ it.description }}</td>
+        <td>{{ it.createdAt | date : "short" }}</td>
+        <td class="actions">
+          <a [routerLink]="['/edit', it._id]"><button>Edit</button></a>
+          <button (click)="delete(it._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!loading && !items.length">No items yet. Create one!</div>
+</div>

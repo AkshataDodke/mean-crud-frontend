@@ -1,0 +1,23 @@
+<div class="card">
+  <h2>{{ id ? "Edit Item" : "Create Item" }}</h2>
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <form (ngSubmit)="save()" *ngIf="!loading">
+    <label>Name</label>
+    <input
+      [(ngModel)]="item.name"
+      name="name"
+      required
+      placeholder="Item name"
+    />
+    <label>Description</label>
+    <textarea
+      [(ngModel)]="item.description"
+      name="description"
+      rows="4"
+      placeholder="Optional"
+    ></textarea>
+    <button type="submit">{{ id ? "Update" : "Create" }}</button>
+    <a routerLink="/"><button type="button">Cancel</button></a>
+  </form>
+</div>
