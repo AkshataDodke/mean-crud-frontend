@@ -1,4 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:4000'
+    apiUrl: 'https://mean-crud-backend.onrender.com'
+    // apiUrl: 'http://localhost:4000'
 };
